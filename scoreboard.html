@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="main.css">
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Scoreboard</h1>
+        </header>
+        <article>
+            
+            <div class="article">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <td>Team</td>
+                            <td>W</td>
+                            <td>D</td>
+                            <td>L</td>
+                            <td><p><button onclick="sortTable()">Points</button></p></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="scoreboard-team">
+                                <div class="scoreboard-team"></div>
+                                <span class="scoreboard-team-logo"><img class="scoreboard-team-logo"
+                                        src="france.png" alt="Team Foxes"></span>
+                                <span class="scoreboard-team-logo-foxes scoreboard-team-logo-text">Duru</span>
+            </div>
+            </td>
+            <td id="scoreboard-win-duru"></td>
+            <td id="scoreboard-draw-duru"></td>
+            <td id="scoreboard-lose-duru"></td>
+            <td id="scoreboard-score-duru"></td>
+            </tr>
+            <tr>
+                <td class="scoreboard-team">
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo" src="Argentina_flag_icon.svg.png"
+                            alt="Team Wolves"></span>
+                    <span class="scoreboard-team-logo-text">Hasret</span>
+                </td>
+                <td id="scoreboard-win-hasret"></td>
+                <td id="scoreboard-draw-hasret"></td>
+                <td id="scoreboard-lose-hasret"></td>
+                <td id="scoreboard-score-hasret"></td>
+            </tr>
+            <tr>
+                <td class="scoreboard-team">
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo" src="Argentina_flag_icon.svg.png"
+                            alt="Team Lions"></span>
+                    <span class="scoreboard-team-logo-text">Okan</span>
+                </td>
+                <td id="scoreboard-win-okan"></td>
+                <td id="scoreboard-draw-okan"></td>
+                <td id="scoreboard-lose-okan"></td>
+                <td id="scoreboard-score-okan"></td>
+            </tr>
+            <tr>
+                <td class="scoreboard-team">
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo" src="brazil.png"
+                            alt="Team Unicorns"></span>
+                    <span class="scoreboard-team-logo-text">Yekta</span>
+                </td>
+                <td id="scoreboard-win-yekta"></td>
+                <td id="scoreboard-draw-yekta"></td>
+                <td id="scoreboard-lose-yekta"></td>
+                <td id="scoreboard-score-yekta"></td>
+            </tr>
+            </tbody>
+            </table>
+        </article>
+        <script>
+
+let duru = [[],[]];
+let hasret = [[],[]];
+let okan = [[],[]];
+let yekta = [[],[]];
+let gameNumber= 12;
+
+
+
+
+// WIN
+function hasretResult (win) {
+    if (win) {
+        hasret[0].push('W')
+    } else {
+    hasret[1].push('D')
+}
+}
+
+function duruResult (win) {
+    if (win) {
+        duru[0].push('W')
+    } else {
+    duru[1].push('D')
+}
+}
+
+function okanResult (win) {
+    if (win) {
+        okan[0].push('W')
+    } else {
+    okan[1].push('D')
+}
+}
+
+function yektaResult (win) {
+    if (win) {
+        yekta[0].push('W')
+    } else {
+    yekta[1].push('D')
+}
+}
+
+// HASRET
+hasretResult(true)
+hasretResult(true)
+hasretResult(true)
+hasretResult(true)
+hasretResult(true)
+hasretResult()
+hasretResult()
+hasretResult()
+hasretResult()
+
+// YEKTA
+yektaResult(true)
+yektaResult(true)
+yektaResult(true)
+yektaResult(true)
+yektaResult()
+yektaResult()
+yektaResult()
+yektaResult()
+
+// DURU
+duruResult(true)
+duruResult(true)
+duruResult(true)
+duruResult(true)
+duruResult(true)
+duruResult()
+duruResult()
+duruResult()
+duruResult()
+
+// OKAN
+okanResult(true)
+okanResult(true)
+okanResult(true)
+okanResult(true)
+okanResult(true)
+okanResult()
+okanResult()
+okanResult()
+okanResult()
+
+duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
+hasretPoints = (hasret[0].length * 3) +(hasret[1].length * 1) ;
+okanPoints = (okan[0].length * 3) + (okan[1].length * 1) ;
+yektaPoints = (yekta[0].length * 3)+  (yekta[1].length * 1) ;
+
+
+// let duruPointsDisplay = duruPoints;
+// let hasretPointsDisplay = hasretPoints;
+// let okanPointsDisplay= okanPoints;
+// let yektaPointsDisplay= yektaPoints;
+
+let winLossDuru= `${duru[0].length} / ${duru[1].length} / ${gameNumber-(duru[0].length + duru[1].length)}`;
+let winLossHasret=`${hasret[0].length} / ${hasret[1].length} / ${gameNumber-(hasret[0].length + hasret[1].length)}`;
+let winLossOkan=`${okan[0].length} / ${okan[1].length} / ${gameNumber-(okan[0].length + okan[1].length)}`;
+let winLossYekta=`${yekta[0].length} / ${duru[1].length} / ${gameNumber-(yekta[0].length + yekta[1].length)}`;
+
+document.getElementById("scoreboard-score-duru").innerHTML = duruPoints;
+document.getElementById("scoreboard-score-hasret").innerHTML = hasretPoints;
+document.getElementById("scoreboard-score-okan").innerHTML = okanPoints;
+document.getElementById("scoreboard-score-yekta").innerHTML = yektaPoints;
+
+document.getElementById("scoreboard-win-duru").innerHTML = duru[0].length;
+document.getElementById("scoreboard-win-hasret").innerHTML = hasret[0].length;
+document.getElementById("scoreboard-win-okan").innerHTML = okan[0].length;
+document.getElementById("scoreboard-win-yekta").innerHTML = yekta[0].length;
+
+document.getElementById("scoreboard-draw-duru").innerHTML = duru[1].length;
+document.getElementById("scoreboard-draw-hasret").innerHTML = hasret[1].length;
+document.getElementById("scoreboard-draw-okan").innerHTML = okan[1].length;
+document.getElementById("scoreboard-draw-yekta").innerHTML = yekta[1].length;
+
+document.getElementById("scoreboard-lose-duru").innerHTML = gameNumber-(duru[0].length + duru[1].length);
+document.getElementById("scoreboard-lose-hasret").innerHTML = gameNumber-(hasret[0].length + hasret[1].length);
+document.getElementById("scoreboard-lose-okan").innerHTML = gameNumber-(okan[0].length + okan[1].length);
+document.getElementById("scoreboard-lose-yekta").innerHTML = gameNumber-(yekta[0].length + yekta[1].length);
+
+
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  while (switching) {
+   
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      
+      shouldSwitch = false;
+      
+      x = rows[i].getElementsByTagName("TD")[4];
+      y = rows[i + 1].getElementsByTagName("TD")[4];
+      
+      if (Number(x.innerHTML) < Number(y.innerHTML)) {
+        
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+    
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+/*
+console.log('Durunun puanı: ' + duruPoints)
+console.log('Yektanın puanı: ' + yektaPoints)
+console.log('Hasretin puanı: '+ hasretPoints)
+console.log('Okanın puanı: '+ okanPoints)
+
+
+
+console.log(`Duru'nun Galibiyet Sayısı ${duru[0].length}, beraberlik sayısı ${duru[1].length} ve mağlubiyet sayısı ${gameNumber-(duru[0].length + duru[1].length)}.`)
+console.log(`Yekta'nın Galibiyet Sayısı ${yekta[0].length}, beraberlik sayısı ${yekta[1].length} ve mağlubiyet sayısı ${gameNumber-(yekta[0].length + yekta[1].length)}.`)
+console.log(`Hasret'in Galibiyet Sayısı ${hasret[0].length}, beraberlik sayısı ${hasret[1].length} ve mağlubiyet sayısı ${gameNumber-(hasret[0].length + hasret[1].length)}.`)
+console.log(`Okan'ın Galibiyet Sayısı ${okan[0].length}, beraberlik sayısı ${okan[1].length} ve mağlubiyet sayısı ${gameNumber-(okan[0].length + okan[1].length)}.`) */
+
+
+        </script>
+    </div>
+</body>
+</html>
