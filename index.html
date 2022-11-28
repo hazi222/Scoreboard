@@ -103,6 +103,9 @@ let form1= 'W'
 let form2= 'D'
 let form3= 'L'
 
+let form1Result = form1.fontcolor('green')
+let form2Result = form2.fontcolor('white')
+let form3Result = form3.fontcolor('red')
 
 
 
@@ -118,76 +121,76 @@ let arincForm = [form1,form1,form1,form1,form1];
 // WIN
 function hasretResult (win) {
     if (win) {
-        hasret[0].push(form1)
+        hasret[0].push(form1Result)
         hasretForm.shift()
-        hasretForm.push(form1)
+        hasretForm.push(form1Result)
     } else if(win === false) {
-        hasret[1].push(form2)
+        hasret[1].push(form2Result)
         hasretForm.shift()
-        hasretForm.push(form2)
+        hasretForm.push(form2Result)
     } else {
         hasretForm.shift()
-        hasretForm.push(form3)
+        hasretForm.push(form3Result)
     }
 }
 
 function arincResult (win) {
     if (win) {
-        arinc[0].push(form1)
+        arinc[0].push(form1Result)
         arincForm.shift()
-        arincForm.push(form1)
+        arincForm.push(form1Result)
     } else if(win === false) {
-    arinc[1].push(form2)
+    arinc[1].push(form2Result)
     arincForm.shift()
-    arincForm.push(form2)
+    arincForm.push(form2Result)
     } else {
         arincForm.shift()
-    arincForm.push(form3)
+    arincForm.push(form3Result)
     }
 }
 
 function okanResult (win) {
     if (win) {
-        okan[0].push(form1)
+        okan[0].push(form1Result)
         okanForm.shift()
-        okanForm.push(form1)
+        okanForm.push(form1Result)
     } else if(win === false) {
-    okan[1].push(form2)
+    okan[1].push(form2Result)
     okanForm.shift()
-    okanForm.push(form2)
+    okanForm.push(form2Result)
     } else {
         okanForm.shift()
-    okanForm.push(form3)
+    okanForm.push(form3Result)
     }
 }
 
 function yektaResult (win) {
     if (win) {
-        yekta[0].push(form1)
+        yekta[0].push(form1Result)
         yektaForm.shift()
-        yektaForm.push(form1)
+        yektaForm.push(form1Result)
     } else if(win === false) {
-    yekta[1].push(form2)
+    yekta[1].push(form2Result)
     yektaForm.shift()
-    yektaForm.push(form2)
+    yektaForm.push(form2Result)
     } else {
         yektaForm.shift()
-    yektaForm.push(form3)
+    yektaForm.push(form3Result)
     }
 }
 
 function duruResult (win) {
     if (win) {
-        duru[0].push(form1)
+        duru[0].push(form1Result)
         duruForm.shift()
-        duruForm.push(form1)
+        duruForm.push(form1Result)
     } else if(win === false) {
-    duru[1].push(form2)
+    duru[1].push(form2Result)
     duruForm.shift()
-    duruForm.push(form2)
+    duruForm.push(form2Result)
     } else {
         duruForm.shift()
-    duruForm.push(form3)
+    duruForm.push(form3Result)
     }
 }
 
