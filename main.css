@@ -4,21 +4,9 @@ html, body, h1 {
 }
 body .container {
     background: rgb(125,15,52);
-background: radial-gradient(circle, rgba(125,15,52,1) 0%, rgba(42,1,15,1) 100%);
+    background: radial-gradient(circle, rgba(125,15,52,1) 0%, rgba(42,1,15,1) 100%);
     
 }
-
-button {
-    background-color: #000000; /* Green */
-    border: none;
-    color: white;
-    margin: 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-  }
   
   h1 {
     border-top: 3px solid;
@@ -49,8 +37,6 @@ article {
     justify-content: center;
     align-items: center;
     flex: 8;
-    
-
 }
 
 #myTable {
@@ -113,12 +99,11 @@ a {
 .container {
     width: 100vw; 
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     background-color: rgb(255, 255, 255);
 }
 
@@ -140,13 +125,6 @@ a {
 }
 
 
-/*
-span.scoreboard-team-logo-text {
-    position: absolute;
-    top: 50%;
-}
-*/
-
 img.scoreboard-team-logo {
     width: 22pt;
     padding-right: 0.5em;
@@ -156,12 +134,12 @@ img.scoreboard-team-logo {
   td {
     padding: 10px;
   }
-  
 }
 
 @media only screen and (max-height: 850px) {
     header {
         height: 30%;
       }
-    
   }
+
+
