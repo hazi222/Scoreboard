@@ -20,6 +20,7 @@
                             <td>D</td>
                             <td>L</td>
                             <td><p><button onclick="sortTable()">Points</button></p></td>
+                            <td>Form</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +36,7 @@
             <td id="scoreboard-draw-duru"></td>
             <td id="scoreboard-lose-duru"></td>
             <td id="scoreboard-score-duru"></td>
+            <td id="scoreboard-form-duru"><div class="formData" id="duruResult"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -46,6 +48,7 @@
                 <td id="scoreboard-draw-hasret"></td>
                 <td id="scoreboard-lose-hasret"></td>
                 <td id="scoreboard-score-hasret"></td>
+                <td id="scoreboard-form-hasret"><div class="formData" id="hasretResult"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -57,6 +60,7 @@
                 <td id="scoreboard-draw-okan"></td>
                 <td id="scoreboard-lose-okan"></td>
                 <td id="scoreboard-score-okan"></td>
+                <td id="scoreboard-form-okan"><div class="formData" id="okanResult"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -68,6 +72,7 @@
                 <td id="scoreboard-draw-yekta"></td>
                 <td id="scoreboard-lose-yekta"></td>
                 <td id="scoreboard-score-yekta"></td>
+                <td id="scoreboard-form-yekta"><div class="formData" id="yektaResult"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -79,7 +84,9 @@
                 <td id="scoreboard-draw-arinc"></td>
                 <td id="scoreboard-lose-arinc"></td>
                 <td id="scoreboard-score-arinc"></td>
+                <td id="scoreboard-form-arinc"><div class="formData" id="arincResult"></div></td>
             </tr>
+            
             </tbody>
             </table>
         </article>
@@ -92,6 +99,15 @@ let yekta = [[],[]];
 let arinc = [[],[]];
 let gameNumber= 28;
 
+let form1= 'W'
+let form2= 'D'
+let form3= 'L'
+
+let duruForm = ['W','W','W','W','W'];
+let hasretForm = ['W','W','W','W','W'];
+let okanForm = ['W','W','W','W','W'];
+let yektaForm = ['W','W','W','W','W'];
+let arincForm = ['W','W','W','W','W'];
 
 
 
@@ -99,41 +115,76 @@ let gameNumber= 28;
 function hasretResult (win) {
     if (win) {
         hasret[0].push('W')
-    } else {
+        hasretForm.shift()
+        hasretForm.push('W')
+    } else if(win === false) {
     hasret[1].push('D')
-}
-}
-
-function duruResult (win) {
-    if (win) {
-        duru[0].push('W')
+    hasretForm.shift()
+    hasretForm.push('D')
     } else {
-    duru[1].push('D')
-}
-}
-
-function okanResult (win) {
-    if (win) {
-        okan[0].push('W')
-    } else {
-    okan[1].push('D')
-}
-}
-
-function yektaResult (win) {
-    if (win) {
-        yekta[0].push('W')
-    } else {
-    yekta[1].push('D')
-}
+        hasretForm.shift()
+    hasretForm.push('L')
+    }
 }
 
 function arincResult (win) {
     if (win) {
         arinc[0].push('W')
-    } else {
+        arincForm.shift()
+        arincForm.push('W')
+    } else if(win === false) {
     arinc[1].push('D')
+    arincForm.shift()
+    arincForm.push('D')
+    } else {
+        arincForm.shift()
+    arincForm.push('L')
+    }
 }
+
+function okanResult (win) {
+    if (win) {
+        okan[0].push('W')
+        okanForm.shift()
+        okanForm.push('W')
+    } else if(win === false) {
+    okan[1].push('D')
+    okanForm.shift()
+    okanForm.push('D')
+    } else {
+        okanForm.shift()
+    okanForm.push('L')
+    }
+}
+
+function yektaResult (win) {
+    if (win) {
+        yekta[0].push('W')
+        yektaForm.shift()
+        yektaForm.push('W')
+    } else if(win === false) {
+    yekta[1].push('D')
+    yektaForm.shift()
+    yektaForm.push('D')
+    } else {
+        yektaForm.shift()
+    yektaForm.push('L')
+    }
+}
+
+function duruResult (win) {
+    if (win) {
+        duru[0].push('W')
+        duruForm.shift()
+        duruForm.push('W')
+    } else if(win === false) {
+    duru[1].push('D')
+    duruForm.shift()
+    duruForm.push('D')
+    } else {
+        duruForm.shift()
+    duruForm.push('L')
+    }
 }
 
 // HASRET
@@ -148,16 +199,20 @@ hasretResult(true)
 hasretResult(true)
 hasretResult(true)
 hasretResult(true)
+hasretResult(false)
+hasretResult(false)
+hasretResult(false)
+hasretResult(false)
+hasretResult(false)
+hasretResult(false)
+hasretResult(false)
+hasretResult(false)
 hasretResult(true)
+hasretResult()
+hasretResult()
 hasretResult(true)
-hasretResult()
-hasretResult()
-hasretResult()
-hasretResult()
-hasretResult()
-hasretResult()
-hasretResult()
-hasretResult()
+hasretResult(false)
+
 
 // YEKTA
 yektaResult(true)
@@ -169,16 +224,20 @@ yektaResult(true)
 yektaResult(true)
 yektaResult(true)
 yektaResult(true)
+yektaResult(false)
+yektaResult(false)
+yektaResult(false)
+yektaResult(false)
+yektaResult(false)
+yektaResult(false)
+yektaResult(false)
+yektaResult(false)
 yektaResult(true)
+yektaResult()
 yektaResult(true)
 yektaResult()
 yektaResult()
-yektaResult()
-yektaResult()
-yektaResult()
-yektaResult()
-yektaResult()
-yektaResult()
+
 
 // DURU
 duruResult(true)
@@ -188,19 +247,23 @@ duruResult(true)
 duruResult(true)
 duruResult(true)
 duruResult(true)
+duruResult(false)
+duruResult(false)
+duruResult(false)
 duruResult(true)
 duruResult(true)
 duruResult(true)
 duruResult(true)
+duruResult(false)
+duruResult(false)
+duruResult(false)
+duruResult(false)
 duruResult(true)
 duruResult()
 duruResult()
 duruResult()
-duruResult()
-duruResult()
-duruResult()
-duruResult()
-duruResult()
+duruResult(false)
+
 
 // OKAN
 okanResult(true)
@@ -213,16 +276,20 @@ okanResult(true)
 okanResult(true)
 okanResult(true)
 okanResult(true)
+okanResult(false)
+okanResult(false)
+okanResult(false)
+okanResult(false)
+okanResult(false)
+okanResult(false)
+okanResult(false)
+okanResult(false)
 okanResult(true)
+okanResult()
 okanResult(true)
 okanResult()
 okanResult()
-okanResult()
-okanResult()
-okanResult()
-okanResult()
-okanResult()
-okanResult()
+
 
 
 //ARINÇ
@@ -234,14 +301,14 @@ arincResult(true)
 arincResult(true)
 arincResult(true)
 arincResult(true)
-arincResult()
-arincResult()
-arincResult()
-arincResult()
-arincResult()
-arincResult()
-arincResult()
-arincResult()
+arincResult(false)
+arincResult(false)
+arincResult(false)
+arincResult(false)
+arincResult(false)
+arincResult(false)
+arincResult(false)
+arincResult(false)
 
 duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
 hasretPoints = (hasret[0].length * 3) +(hasret[1].length * 1) ;
@@ -284,6 +351,14 @@ document.getElementById("scoreboard-lose-hasret").innerHTML = gameNumber-(hasret
 document.getElementById("scoreboard-lose-okan").innerHTML = gameNumber-(okan[0].length + okan[1].length);
 document.getElementById("scoreboard-lose-yekta").innerHTML = gameNumber-(yekta[0].length + yekta[1].length);
 document.getElementById("scoreboard-lose-arinc").innerHTML = gameNumber-(arinc[0].length + arinc[1].length);
+
+
+document.getElementById("arincResult").innerHTML = arincForm.join(' ');
+document.getElementById("duruResult").innerHTML = duruForm.join(' ');
+document.getElementById("hasretResult").innerHTML = hasretForm.join(' ');
+document.getElementById("yektaResult").innerHTML = yektaForm.join(' ');
+document.getElementById("okanResult").innerHTML = okanForm.join(' ');
+
 
 
 function sortTable() {

@@ -73,11 +73,9 @@ a {
     color: white;
 }
 
-.form {
-    padding: auto;
-    margin: auto;
-    display: inline-flex;
-}
+
+
+
 .container {
     width: 100vw; 
     height: 100vh;
