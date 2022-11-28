@@ -5,7 +5,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Scoreboard</h1>
+            
         </header>
         
 
@@ -15,7 +15,7 @@
                 <table id="myTable">
                     <thead>
                         <tr>
-                            <td>Team</td>
+                            <td>Teams</td>
                             <td>W</td>
                             <td>D</td>
                             <td>L</td>
@@ -97,11 +97,13 @@ let hasret = [[],[]];
 let okan = [[],[]];
 let yekta = [[],[]];
 let arinc = [[],[]];
-let gameNumber= 29;
+let gameNumber= 30;
 
 let form1= 'W'
 let form2= 'D'
 let form3= 'L'
+
+
 
 let form1Result = form1.fontcolor('green')
 let form2Result = form2.fontcolor('white')
@@ -219,6 +221,7 @@ hasretResult()
 hasretResult(true)
 hasretResult(false)
 hasretResult(false)
+hasretResult()
 
 
 
@@ -246,6 +249,7 @@ yektaResult(true)
 yektaResult()
 yektaResult()
 yektaResult(false)
+yektaResult()
 
 
 // DURU
@@ -273,6 +277,7 @@ duruResult()
 duruResult()
 duruResult(false)
 duruResult(false)
+duruResult(true)
 
 
 // OKAN
@@ -300,6 +305,7 @@ okanResult(true)
 okanResult()
 okanResult()
 okanResult(false)
+okanResult(true)
 
 
 
@@ -321,6 +327,7 @@ arincResult(false)
 arincResult(false)
 arincResult(false)
 arincResult(false)
+arincResult()
 
 duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
 hasretPoints = (hasret[0].length * 3) +(hasret[1].length * 1) ;

@@ -1,6 +1,13 @@
 html, body, h1 {
     margin: 0; padding: 0;
+    
 }
+body .container {
+    background: rgb(125,15,52);
+background: radial-gradient(circle, rgba(125,15,52,1) 0%, rgba(42,1,15,1) 100%);
+    
+}
+
 button {
     background-color: #000000; /* Green */
     border: none;
@@ -11,9 +18,8 @@ button {
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
   }
+  
   h1 {
     border-top: 3px solid;
     border-bottom: 3px solid;
@@ -22,15 +28,19 @@ button {
 
 body {
     font-family: 'Unica One', sans-serif;
+    
 }
 
 header {
     display: flex;
-    flex: 2;
+    flex: auto;
     justify-content: center;
     align-items: center;
-    background-color: rgb(88, 93, 97);
     width: 100%;
+    height: 100%;
+    background-image: url('BANNER-LOGO.jpg');
+    background-size: 100% 100%;
+    
 }
 
 article {
@@ -38,6 +48,7 @@ article {
     justify-content: center;
     align-items: center;
     flex: 8;
+    
 
 }
 
@@ -106,7 +117,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     background-color: rgb(255, 255, 255);
 }
 
