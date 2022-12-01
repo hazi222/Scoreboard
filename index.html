@@ -21,6 +21,7 @@
                             <td>L</td>
                             <td><p><div onclick="sortTable()">Points</div></p></td>
                             <td>Form</td>
+                            <td>Win Percentage</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,7 @@
             <td id="scoreboard-lose-duru"></td>
             <td id="scoreboard-score-duru"></td>
             <td id="scoreboard-form-duru"><div class="formData" id="duruResult"></div></td>
+            <td id="scoreboard-percantage-duru"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -49,6 +51,7 @@
                 <td id="scoreboard-lose-hasret"></td>
                 <td id="scoreboard-score-hasret"></td>
                 <td id="scoreboard-form-hasret"><div class="formData" id="hasretResult"></div></td>
+                <td id="scoreboard-percantage-hasret"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -61,6 +64,7 @@
                 <td id="scoreboard-lose-okan"></td>
                 <td id="scoreboard-score-okan"></td>
                 <td id="scoreboard-form-okan"><div class="formData" id="okanResult"></div></td>
+                <td id="scoreboard-percantage-okan"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -73,6 +77,7 @@
                 <td id="scoreboard-lose-yekta"></td>
                 <td id="scoreboard-score-yekta"></td>
                 <td id="scoreboard-form-yekta"><div class="formData" id="yektaResult"></div></td>
+                <td id="scoreboard-percantage-yekta"></div></td>
             </tr>
             <tr>
                 <td class="scoreboard-team">
@@ -85,6 +90,7 @@
                 <td id="scoreboard-lose-arinc"></td>
                 <td id="scoreboard-score-arinc"></td>
                 <td id="scoreboard-form-arinc"><div class="formData" id="arincResult"></div></td>
+                <td id="scoreboard-percantage-arinc"></div></td>
             </tr>
             
             </tbody>
@@ -97,7 +103,7 @@ let hasret = [[],[]];
 let okan = [[],[]];
 let yekta = [[],[]];
 let arinc = [[],[]];
-let gameNumber= 42;
+let gameNumber= 44;
 
 let form1= 'W'
 let form2= 'D'
@@ -234,6 +240,8 @@ hasretResult(true)
 hasretResult(true)
 hasretResult()
 hasretResult(false)
+hasretResult()
+hasretResult(true)
 
 
 
@@ -274,6 +282,8 @@ yektaResult()
 yektaResult()
 yektaResult(true)
 yektaResult(false)
+yektaResult()
+yektaResult(true)
 
 
 // DURU
@@ -314,6 +324,8 @@ duruResult(true)
 duruResult(true)
 duruResult(true)
 duruResult(false)
+duruResult(true)
+duruResult(true)
 
 
 // OKAN
@@ -354,6 +366,8 @@ okanResult(true)
 okanResult(true)
 okanResult(true)
 okanResult(false)
+okanResult()
+okanResult(true)
 
 
 
@@ -388,6 +402,8 @@ arincResult(true)
 arincResult()
 arincResult(true)
 arincResult(true)
+arincResult(true)
+arincResult(true)
 
 duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
 hasretPoints = (hasret[0].length * 3) +(hasret[1].length * 1) ;
@@ -396,10 +412,19 @@ yektaPoints = (yekta[0].length * 3)+  (yekta[1].length * 1) ;
 arincPoints = (arinc[0].length * 3)+  (arinc[1].length * 1) ;
 
 
-// let duruPointsDisplay = duruPoints;
-// let hasretPointsDisplay = hasretPoints;
-// let okanPointsDisplay= okanPoints;
-// let yektaPointsDisplay= yektaPoints;
+let winPercentageDuru =(Math.round((duru[0].length / gameNumber) *100))
+let winPercentageHasret =(Math.round((hasret[0].length / gameNumber) *100))
+let winPercentageOkan =(Math.round((okan[0].length / gameNumber) *100))
+let winPercentageYekta =(Math.round((yekta[0].length / gameNumber) *100))
+let winPercentageArinc =(Math.round((arinc[0].length / gameNumber) *100))
+
+
+
+document.getElementById("scoreboard-percantage-duru").innerHTML = '%' + winPercentageDuru;
+document.getElementById("scoreboard-percantage-hasret").innerHTML = '%' + winPercentageHasret;
+document.getElementById("scoreboard-percantage-yekta").innerHTML = '%' + winPercentageYekta;
+document.getElementById("scoreboard-percantage-okan").innerHTML = '%' + winPercentageOkan;
+document.getElementById("scoreboard-percantage-arinc").innerHTML = '%' + winPercentageArinc;
 
 let winLossDuru= `${duru[0].length} / ${duru[1].length} / ${gameNumber-(duru[0].length + duru[1].length)}`;
 let winLossHasret=`${hasret[0].length} / ${hasret[1].length} / ${gameNumber-(hasret[0].length + hasret[1].length)}`;
@@ -437,6 +462,7 @@ document.getElementById("duruResult").innerHTML = duruForm.join(' ');
 document.getElementById("hasretResult").innerHTML = hasretForm.join(' ');
 document.getElementById("yektaResult").innerHTML = yektaForm.join(' ');
 document.getElementById("okanResult").innerHTML = okanForm.join(' ');
+
 
 
 document.addEventListener("DOMContentLoaded", function sortTable() {
