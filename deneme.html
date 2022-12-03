@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+
+duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
+hasretPoints = (hasret[0].length * 3) +(hasret[1].length * 1) ;
+okanPoints = (okan[0].length * 3) + (okan[1].length * 1) ;
+yektaPoints = (yekta[0].length * 3)+  (yekta[1].length * 1) ;
+arincPoints = (arinc[0].length * 3)+  (arinc[1].length * 1) ;
+
+
+let winPercentageDuru =(Math.round((duru[0].length / gameNumber) *100))
+let winPercentageHasret =(Math.round((hasret[0].length / gameNumber) *100))
+let winPercentageOkan =(Math.round((okan[0].length / gameNumber) *100))
+let winPercentageYekta =(Math.round((yekta[0].length / gameNumber) *100))
+let winPercentageArinc =(Math.round((arinc[0].length / gameNumber) *100))
+
+let drawPercentageDuru =(Math.round((duru[1].length / gameNumber) *100))
+let drawPercentageHasret =(Math.round((hasret[1].length / gameNumber) *100))
+let drawPercentageOkan =(Math.round((okan[1].length / gameNumber) *100))
+let drawPercentageYekta =(Math.round((yekta[1].length / gameNumber) *100))
+let drawPercentageArinc =(Math.round((arinc[1].length / gameNumber) *100))
+
+let lossPercentageDuru =100-(winPercentageDuru+drawPercentageDuru)
+let lossPercentageHasret =100-(winPercentageHasret+drawPercentageHasret)
+let lossPercentageOkan =100-(winPercentageOkan+drawPercentageOkan)
+let lossPercentageYekta =100-(winPercentageYekta+drawPercentageYekta)
+let lossPercentageArinc =100-(winPercentageArinc+drawPercentageArinc)
+
+let duru = [[],[]];
+let hasret = [[],[]];
+let okan = [[],[]];
+let yekta = [[],[]];
+let arinc = [[],[]];
+let gameNumber= 49;
+
+let form1= 'W'
+let form2= 'D'
+let form3= 'L'
+
+
+
+let form1Result = form1.fontcolor('green')
+let form2Result = form2.fontcolor('white')
+let form3Result = form3.fontcolor('red')
+
+
+
+
+let duruForm = [form1,form1,form1,form1,form1];
+let hasretForm = [form1,form1,form1,form1,form1];
+let okanForm = [form1,form1,form1,form1,form1];
+let yektaForm = [form1,form1,form1,form1,form1];
+let arincForm = [form1,form1,form1,form1,form1];
+
+
+
+// WIN
+function hasretResult (win) {
+    if (win) {
+        hasret[0].push(form1Result)
+        hasretForm.shift()
+        hasretForm.push(form1Result)
+    } else if(win === false) {
+        hasret[1].push(form2Result)
+        hasretForm.shift()
+        hasretForm.push(form2Result)
+    } else {
+        hasretForm.shift()
+        hasretForm.push(form3Result)
+    }
+}
+
+function arincResult (win) {
+    if (win) {
+        arinc[0].push(form1Result)
+        arincForm.shift()
+        arincForm.push(form1Result)
+    } else if(win === false) {
+    arinc[1].push(form2Result)
+    arincForm.shift()
+    arincForm.push(form2Result)
+    } else {
+        arincForm.shift()
+    arincForm.push(form3Result)
+    }
+}
+
+function okanResult (win) {
+    if (win) {
+        okan[0].push(form1Result)
+        okanForm.shift()
+        okanForm.push(form1Result)
+    } else if(win === false) {
+    okan[1].push(form2Result)
+    okanForm.shift()
+    okanForm.push(form2Result)
+    } else {
+        okanForm.shift()
+    okanForm.push(form3Result)
+    }
+}
+
+function yektaResult (win) {
+    if (win) {
+        yekta[0].push(form1Result)
+        yektaForm.shift()
+        yektaForm.push(form1Result)
+    } else if(win === false) {
+    yekta[1].push(form2Result)
+    yektaForm.shift()
+    yektaForm.push(form2Result)
+    } else {
+        yektaForm.shift()
+    yektaForm.push(form3Result)
+    }
+}
+
+function duruResult (win) {
+    if (win) {
+        duru[0].push(form1Result)
+        duruForm.shift()
+        duruForm.push(form1Result)
+    } else if(win === false) {
+    duru[1].push(form2Result)
+    duruForm.shift()
+    duruForm.push(form2Result)
+    } else {
+        duruForm.shift()
+    duruForm.push(form3Result)
+    }
+}
+
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Desktop Search Engine Market Share - 2016"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 79.45, label: "Google"},
+			{y: 7.31, label: "Bing"},
+			{y: 7.06, label: "Baidu"},
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
