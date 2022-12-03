@@ -21,7 +21,7 @@
                             <td>L</td>
                             <td><p><div onclick="sortTable()">Points</div></p></td>
                             <td>Form</td>
-                            <td>Win Percentage</td>
+                            <td>Percentages <br>Win | Draw | Loss</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -439,13 +439,25 @@ let winPercentageOkan =(Math.round((okan[0].length / gameNumber) *100))
 let winPercentageYekta =(Math.round((yekta[0].length / gameNumber) *100))
 let winPercentageArinc =(Math.round((arinc[0].length / gameNumber) *100))
 
+let drawPercentageDuru =(Math.round((duru[1].length / gameNumber) *100))
+let drawPercentageHasret =(Math.round((hasret[1].length / gameNumber) *100))
+let drawPercentageOkan =(Math.round((okan[1].length / gameNumber) *100))
+let drawPercentageYekta =(Math.round((yekta[1].length / gameNumber) *100))
+let drawPercentageArinc =(Math.round((arinc[1].length / gameNumber) *100))
+
+let lossPercentageDuru =100-(winPercentageDuru+drawPercentageDuru)
+let lossPercentageHasret =100-(winPercentageHasret+drawPercentageHasret)
+let lossPercentageOkan =100-(winPercentageOkan+drawPercentageOkan)
+let lossPercentageYekta =100-(winPercentageYekta+drawPercentageYekta)
+let lossPercentageArinc =100-(winPercentageArinc+drawPercentageArinc)
 
 
-document.getElementById("scoreboard-percantage-duru").innerHTML = '%' + winPercentageDuru;
-document.getElementById("scoreboard-percantage-hasret").innerHTML = '%' + winPercentageHasret;
-document.getElementById("scoreboard-percantage-yekta").innerHTML = '%' + winPercentageYekta;
-document.getElementById("scoreboard-percantage-okan").innerHTML = '%' + winPercentageOkan;
-document.getElementById("scoreboard-percantage-arinc").innerHTML = '%' + winPercentageArinc;
+
+document.getElementById("scoreboard-percantage-duru").innerHTML = '%' + winPercentageDuru + ' | ' +'%' + drawPercentageDuru + ' | '+ '%' + lossPercentageDuru ;
+document.getElementById("scoreboard-percantage-hasret").innerHTML = '%' + winPercentageHasret + ' | ' +'%' + drawPercentageHasret + ' | '+ '%' + lossPercentageHasret ;
+document.getElementById("scoreboard-percantage-yekta").innerHTML = '%' + winPercentageYekta + ' | ' +'%' + drawPercentageYekta + ' | '+ '%' + lossPercentageYekta ;
+document.getElementById("scoreboard-percantage-okan").innerHTML = '%' + winPercentageOkan + ' | ' +'%' + drawPercentageOkan + ' | '+ '%' + lossPercentageOkan ;
+document.getElementById("scoreboard-percantage-arinc").innerHTML = '%' + winPercentageArinc + ' | ' +'%' + drawPercentageArinc + ' | '+ '%' + lossPercentageArinc ;
 
 
 document.getElementById("scoreboard-score-duru").innerHTML = duruPoints;
