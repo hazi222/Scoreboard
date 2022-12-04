@@ -5,7 +5,7 @@ let hasret = [[],[]];
 let okan = [[],[]];
 let yekta = [[],[]];
 let arinc = [[],[]];
-let gameNumber= 50;
+let gameNumber= 51;
 
 let form1= 'W'
 let form2= 'D'
@@ -153,6 +153,7 @@ hasretResult()
 hasretResult()
 hasretResult(true)
 hasretResult(true)
+hasretResult()
 
 // YEKTA
 yektaResult(true)
@@ -198,6 +199,7 @@ yektaResult()
 yektaResult()
 yektaResult(true)
 yektaResult()
+yektaResult(true)
 yektaResult(true)
 
 
@@ -245,6 +247,7 @@ duruResult(true)
 duruResult()
 duruResult(true)
 duruResult()
+duruResult(true)
 duruResult(true)
 duruResult(true)
 
@@ -295,6 +298,7 @@ okanResult(true)
 okanResult(true)
 okanResult(true)
 okanResult(true)
+okanResult()
 
 //ARINÇ
 arincResult(true)
@@ -333,6 +337,7 @@ arincResult(false)
 arincResult(false)
 arincResult(true)
 arincResult(false)
+arincResult(true)
 arincResult(true)
 arincResult(true)
 
