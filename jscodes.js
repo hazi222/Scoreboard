@@ -255,7 +255,7 @@ duruResult(true)
 duruResult(true)
 duruResult(true)
 duruResult(true)
-yektaResult()
+duruResult()
 
 // OKAN
 okanResult(true)
