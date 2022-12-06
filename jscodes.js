@@ -157,7 +157,7 @@ hasretResult()
 hasretResult(true)
 hasretResult(true)
 hasretResult(true)
-hasretResult(true)
+hasretResult()
 hasretResult(true)
 
 
@@ -211,7 +211,7 @@ yektaResult(true)
 yektaResult(true)
 yektaResult()
 yektaResult(true)
-yektaResult(true)
+yektaResult()
 yektaResult(true)
 
 // DURU
@@ -265,7 +265,7 @@ duruResult(true)
 duruResult()
 duruResult(true)
 duruResult()
-duruResult(true)
+duruResult()
 
 // OKAN
 okanResult(true)
@@ -317,7 +317,7 @@ okanResult()
 okanResult(true)
 okanResult(true)
 okanResult(true)
-okanResult(true)
+okanResult()
 okanResult(true)
 
 
@@ -365,7 +365,7 @@ arincResult(true)
 arincResult(true)
 arincResult(false)
 arincResult(true)
-arincResult(true)
+arincResult()
 arincResult(true)
 
 
