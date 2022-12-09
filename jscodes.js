@@ -161,7 +161,6 @@ hasretResult()
 hasretResult(true)
 hasretResult()
 
-
 // YEKTA
 yektaResult(true)
 yektaResult(true)
@@ -216,7 +215,6 @@ yektaResult(true)
 yektaResult()
 
 
-
 // DURU
 duruResult(true)
 duruResult(true)
@@ -269,8 +267,7 @@ duruResult()
 duruResult(true)
 duruResult()
 duruResult()
-duruResult(
-    
+duruResult()
     
 // OKAN
 okanResult(true)
@@ -326,7 +323,6 @@ okanResult()
 okanResult(true)
 okanResult()
 
-
 //ARINÇ
 arincResult(true)
 arincResult(true)
@@ -373,7 +369,6 @@ arincResult(true)
 arincResult()
 arincResult(true)
 arincResult()
-
 
 
 duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
