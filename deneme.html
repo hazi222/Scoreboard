@@ -1,39 +1,130 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<script>
+<link rel="stylesheet" href="main.css">
 
-duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
-hasretPoints = (hasret[0].length * 3) +(hasret[1].length * 1) ;
-okanPoints = (okan[0].length * 3) + (okan[1].length * 1) ;
-yektaPoints = (yekta[0].length * 3)+  (yekta[1].length * 1) ;
-arincPoints = (arinc[0].length * 3)+  (arinc[1].length * 1) ;
+<body>
+    <div class="container">
+        <header>
+            
+        </header>
+        
 
+        <article>
+            
+            <div class="article">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <td>Teams</td>
+                            <td>W</td>
+                            <td>D</td>
+                            <td>L</td>
+                            <td><p><div onclick="sortTable()">Points</div></p></td>
+                            <td>Form</td>
+                            <td>Percentages <br>Win | Draw | Loss</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="scoreboard-team">
+                                <div class="scoreboard-team"></div>
+                                <span class="scoreboard-team-logo"><img class="scoreboard-team-logo"
+                                        src="france.png" alt="Team Foxes"></span>
+                                <span class="scoreboard-team-logo-foxes scoreboard-team-logo-text">Duru</span>
+            </div>
+            </td>
+            <td id="scoreboard-win-duru"></td>
+            <td id="scoreboard-draw-duru"></td>
+            <td id="scoreboard-lose-duru"></td>
+            <td id="scoreboard-score-duru"></td>
+            <td id="scoreboard-form-duru"><div class="formData" id="duruResult"></div></td>
+            <td id="scoreboard-percantage-duru"></div></td>
+            
+            </tr>
+            <tr>
+                <td class="scoreboard-team">
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo" src="Argentina_flag_icon.svg.png"
+                            alt="Team Wolves"></span>
+                    <span class="scoreboard-team-logo-text">Hasret</span>
+                </td>
+                <td id="scoreboard-win-hasret"></td>
+                <td id="scoreboard-draw-hasret"></td>
+                <td id="scoreboard-lose-hasret"></td>
+                <td id="scoreboard-score-hasret"></td>
+                <td id="scoreboard-form-hasret"><div class="formData" id="hasretResult"></div></td>
+                <td id="scoreboard-percantage-hasret"></div></td>
+            </tr>
+            <tr>
+                <td class="scoreboard-team">
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo" src="Argentina_flag_icon.svg.png"
+                            alt="Team Lions"></span>
+                    <span class="scoreboard-team-logo-text">Okan </span>
+                </td>
+                <td id="scoreboard-win-okan"></td>
+                <td id="scoreboard-draw-okan"></td>
+                <td id="scoreboard-lose-okan"></td>
+                <td id="scoreboard-score-okan"></td>
+                <td id="scoreboard-form-okan"><div class="formData" id="okanResult"></div></td>
+                <td id="scoreboard-percantage-okan"></div></td>
+            </tr>
+            <tr>
+                <td class="scoreboard-team">
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo" src="brazil.png"
+                            alt="Team Unicorns"></span>
+                    <span class="scoreboard-team-logo-text">Yekta</span>
+                </td>
+                <td id="scoreboard-win-yekta"></td>
+                <td id="scoreboard-draw-yekta"></td>
+                <td id="scoreboard-lose-yekta"></td>
+                <td id="scoreboard-score-yekta"></td>
+                <td id="scoreboard-form-yekta"><div class="formData" id="yektaResult"></div></td>
+                <td id="scoreboard-percantage-yekta"></div></td>
+            </tr>
+            <tr>
+                <td class="scoreboard-team">
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo" src="turkey.png"
+                            alt="Team Wolves"></span>
+                    <span class="scoreboard-team-logo-text">Arınç</span>
+                </td>
+                <td id="scoreboard-win-arinc"></td>
+                <td id="scoreboard-draw-arinc"></td>
+                <td id="scoreboard-lose-arinc"></td>
+                <td id="scoreboard-score-arinc"></td>
+                <td id="scoreboard-form-arinc"><div class="formData" id="arincResult"></div></td>
+                <td id="scoreboard-percantage-arinc"></div></td>
+            </tr>
 
-let winPercentageDuru =(Math.round((duru[0].length / gameNumber) *100))
-let winPercentageHasret =(Math.round((hasret[0].length / gameNumber) *100))
-let winPercentageOkan =(Math.round((okan[0].length / gameNumber) *100))
-let winPercentageYekta =(Math.round((yekta[0].length / gameNumber) *100))
-let winPercentageArinc =(Math.round((arinc[0].length / gameNumber) *100))
+            <tr>
+                <td class="scoreboard-team">
+                    <div class="scoreboard-team"></div>
+                    <span class="scoreboard-team-logo"><img class="scoreboard-team-logo"
+                            src="portugal.png" alt="Team Foxes"></span>
+                    <span class="scoreboard-team-logo-foxes scoreboard-team-logo-text">Oguz</span>
+</div>
+</td>
+<td id="scoreboard-win-oguz"></td>
+<td id="scoreboard-draw-oguz"></td>
+<td id="scoreboard-lose-oguz"></td>
+<td id="scoreboard-score-oguz"></td>
+<td id="scoreboard-form-oguz"><div class="formData" id="oguzResult"></div></td>
+<td id="scoreboard-percantage-oguz"></div></td>
 
-let drawPercentageDuru =(Math.round((duru[1].length / gameNumber) *100))
-let drawPercentageHasret =(Math.round((hasret[1].length / gameNumber) *100))
-let drawPercentageOkan =(Math.round((okan[1].length / gameNumber) *100))
-let drawPercentageYekta =(Math.round((yekta[1].length / gameNumber) *100))
-let drawPercentageArinc =(Math.round((arinc[1].length / gameNumber) *100))
+</tr>
+            
+            </tbody>
+            </table>
 
-let lossPercentageDuru =100-(winPercentageDuru+drawPercentageDuru)
-let lossPercentageHasret =100-(winPercentageHasret+drawPercentageHasret)
-let lossPercentageOkan =100-(winPercentageOkan+drawPercentageOkan)
-let lossPercentageYekta =100-(winPercentageYekta+drawPercentageYekta)
-let lossPercentageArinc =100-(winPercentageArinc+drawPercentageArinc)
+            
+        </article>
+        <script>
 
 let duru = [[],[]];
 let hasret = [[],[]];
 let okan = [[],[]];
 let yekta = [[],[]];
 let arinc = [[],[]];
-let gameNumber= 49;
+let oguz = [[],[]];
+let gameNumber= 0;
 
 let form1= 'W'
 let form2= 'D'
@@ -53,6 +144,7 @@ let hasretForm = [form1,form1,form1,form1,form1];
 let okanForm = [form1,form1,form1,form1,form1];
 let yektaForm = [form1,form1,form1,form1,form1];
 let arincForm = [form1,form1,form1,form1,form1];
+let oguzForm = [form1,form1,form1,form1,form1];
 
 
 
@@ -132,32 +224,177 @@ function duruResult (win) {
     }
 }
 
-window.onload = function() {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title: {
-		text: "Desktop Search Engine Market Share - 2016"
-	},
-	data: [{
-		type: "pie",
-		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
-		indexLabel: "{label} {y}",
-		dataPoints: [
-			{y: 79.45, label: "Google"},
-			{y: 7.31, label: "Bing"},
-			{y: 7.06, label: "Baidu"},
-		]
-	}]
-});
-chart.render();
-
+function oguzResult (win) {
+    if (win) {
+        oguz[0].push(form1Result)
+        oguzForm.shift()
+        oguzForm.push(form1Result)
+    } else if(win === false) {
+        oguz[1].push(form2Result)
+        oguzForm.shift()
+        oguzForm.push(form2Result)
+    } else {
+        oguzForm.shift()
+        oguzForm.push(form3Result)
+    }
 }
-</script>
-</head>
-<body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+// HASRET
+
+// hasretResult(true)=W hasretResult()=D hasretResult(false)=L 
+
+// YEKTA
+// yektaResult(true)=W yektaResult()=D yektaResult(false)=L
+
+
+// DURU
+// duruResult(true)=W duruResult()=D duruResult(false)=L
+
+
+
+// OKAN
+// okanResult(true)=W okanResult()=D okanResult(false)=L
+
+
+//ARINÇ
+// arincResult(true)=W arincResult()=D arincResult(false)=L
+
+//OGUZ
+// oguzResult(true)=W oguzResult()=D oguzResult(false)=L
+
+
+duruPoints = (duru[0].length * 3) + (duru[1].length * 1) ;
+hasretPoints = (hasret[0].length * 3) +(hasret[1].length * 1) ;
+okanPoints = (okan[0].length * 3) + (okan[1].length * 1) ;
+yektaPoints = (yekta[0].length * 3)+  (yekta[1].length * 1) ;
+arincPoints = (arinc[0].length * 3)+  (arinc[1].length * 1) ;
+oguzPoints = (oguz[0].length * 3)+  (oguz[1].length * 1) ;
+
+
+let winPercentageDuru =(Math.round((duru[0].length / gameNumber) *100))
+let winPercentageHasret =(Math.round((hasret[0].length / gameNumber) *100))
+let winPercentageOkan =(Math.round((okan[0].length / gameNumber) *100))
+let winPercentageYekta =(Math.round((yekta[0].length / gameNumber) *100))
+let winPercentageArinc =(Math.round((arinc[0].length / gameNumber) *100))
+let winPercentageOguz =(Math.round((oguz[0].length / gameNumber) *100))
+
+let drawPercentageDuru =(Math.round((duru[1].length / gameNumber) *100))
+let drawPercentageHasret =(Math.round((hasret[1].length / gameNumber) *100))
+let drawPercentageOkan =(Math.round((okan[1].length / gameNumber) *100))
+let drawPercentageYekta =(Math.round((yekta[1].length / gameNumber) *100))
+let drawPercentageArinc =(Math.round((arinc[1].length / gameNumber) *100))
+let drawPercentageOguz =(Math.round((oguz[1].length / gameNumber) *100))
+
+let lossPercentageDuru =100-(winPercentageDuru+drawPercentageDuru)
+let lossPercentageHasret =100-(winPercentageHasret+drawPercentageHasret)
+let lossPercentageOkan =100-(winPercentageOkan+drawPercentageOkan)
+let lossPercentageYekta =100-(winPercentageYekta+drawPercentageYekta)
+let lossPercentageArinc =100-(winPercentageArinc+drawPercentageArinc)
+let lossPercentageOguz =100-(winPercentageOguz+drawPercentageOguz)
+
+
+
+
+
+document.getElementById("scoreboard-percantage-duru").innerHTML = '%' + winPercentageDuru + ' | ' +'%' + drawPercentageDuru + ' | '+ '%' + lossPercentageDuru ;
+document.getElementById("scoreboard-percantage-hasret").innerHTML = '%' + winPercentageHasret + ' | ' +'%' + drawPercentageHasret + ' | '+ '%' + lossPercentageHasret ;
+document.getElementById("scoreboard-percantage-yekta").innerHTML = '%' + winPercentageYekta + ' | ' +'%' + drawPercentageYekta + ' | '+ '%' + lossPercentageYekta ;
+document.getElementById("scoreboard-percantage-okan").innerHTML = '%' + winPercentageOkan + ' | ' +'%' + drawPercentageOkan + ' | '+ '%' + lossPercentageOkan ;
+document.getElementById("scoreboard-percantage-arinc").innerHTML = '%' + winPercentageArinc + ' | ' +'%' + drawPercentageArinc + ' | '+ '%' + lossPercentageArinc ;
+document.getElementById("scoreboard-percantage-oguz").innerHTML = '%' + winPercentageOguz + ' | ' +'%' + drawPercentageOguz + ' | '+ '%' + lossPercentageOguz ;
+
+
+document.getElementById("scoreboard-score-duru").innerHTML = duruPoints;
+document.getElementById("scoreboard-score-hasret").innerHTML = hasretPoints;
+document.getElementById("scoreboard-score-okan").innerHTML = okanPoints;
+document.getElementById("scoreboard-score-yekta").innerHTML = yektaPoints;
+document.getElementById("scoreboard-score-arinc").innerHTML = arincPoints;
+document.getElementById("scoreboard-score-oguz").innerHTML = oguzPoints;
+
+document.getElementById("scoreboard-win-duru").innerHTML = duru[0].length;
+document.getElementById("scoreboard-win-hasret").innerHTML = hasret[0].length;
+document.getElementById("scoreboard-win-okan").innerHTML = okan[0].length;
+document.getElementById("scoreboard-win-yekta").innerHTML = yekta[0].length;
+document.getElementById("scoreboard-win-arinc").innerHTML = arinc[0].length;
+document.getElementById("scoreboard-win-oguz").innerHTML = oguz[0].length;
+
+document.getElementById("scoreboard-draw-duru").innerHTML = duru[1].length;
+document.getElementById("scoreboard-draw-hasret").innerHTML = hasret[1].length;
+document.getElementById("scoreboard-draw-okan").innerHTML = okan[1].length;
+document.getElementById("scoreboard-draw-yekta").innerHTML = yekta[1].length;
+document.getElementById("scoreboard-draw-arinc").innerHTML = arinc[1].length;
+document.getElementById("scoreboard-draw-oguz").innerHTML = oguz[1].length;
+
+document.getElementById("scoreboard-lose-duru").innerHTML = gameNumber-(duru[0].length + duru[1].length);
+document.getElementById("scoreboard-lose-hasret").innerHTML = gameNumber-(hasret[0].length + hasret[1].length);
+document.getElementById("scoreboard-lose-okan").innerHTML = gameNumber-(okan[0].length + okan[1].length);
+document.getElementById("scoreboard-lose-yekta").innerHTML = gameNumber-(yekta[0].length + yekta[1].length);
+document.getElementById("scoreboard-lose-arinc").innerHTML = gameNumber-(arinc[0].length + arinc[1].length);
+document.getElementById("scoreboard-lose-oguz").innerHTML = gameNumber-(oguz[0].length + oguz[1].length);
+
+
+document.getElementById("arincResult").innerHTML = arincForm.join(' ');
+document.getElementById("duruResult").innerHTML = duruForm.join(' ');
+document.getElementById("hasretResult").innerHTML = hasretForm.join(' ');
+document.getElementById("yektaResult").innerHTML = yektaForm.join(' ');
+document.getElementById("okanResult").innerHTML = okanForm.join(' ');
+document.getElementById("oguzResult").innerHTML = oguzForm.join(' ');
+
+
+
+document.addEventListener("DOMContentLoaded", function sortTable() {
+     
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  while (switching) {
+   
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      
+      shouldSwitch = false;
+      
+      x = rows[i].getElementsByTagName("TD")[4];
+      y = rows[i + 1].getElementsByTagName("TD")[4];
+      
+      if (Number(x.innerHTML) < Number(y.innerHTML)) {
+        
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+    
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  
+}
+
+});
+
+
+
+// FORM
+
+
+
+/*
+console.log('Durunun puanı: ' + duruPoints)
+console.log('Yektanın puanı: ' + yektaPoints)
+console.log('Hasretin puanı: '+ hasretPoints)
+console.log('Okanın puanı: '+ okanPoints)
+
+
+
+console.log(`Duru'nun Galibiyet Sayısı ${duru[0].length}, beraberlik sayısı ${duru[1].length} ve mağlubiyet sayısı ${gameNumber-(duru[0].length + duru[1].length)}.`)
+console.log(`Yekta'nın Galibiyet Sayısı ${yekta[0].length}, beraberlik sayısı ${yekta[1].length} ve mağlubiyet sayısı ${gameNumber-(yekta[0].length + yekta[1].length)}.`)
+console.log(`Hasret'in Galibiyet Sayısı ${hasret[0].length}, beraberlik sayısı ${hasret[1].length} ve mağlubiyet sayısı ${gameNumber-(hasret[0].length + hasret[1].length)}.`)
+console.log(`Okan'ın Galibiyet Sayısı ${okan[0].length}, beraberlik sayısı ${okan[1].length} ve mağlubiyet sayısı ${gameNumber-(okan[0].length + okan[1].length)}.`) */
+
+
+        </script>
+    </div>
 </body>
 </html>
